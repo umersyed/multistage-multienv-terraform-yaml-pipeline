@@ -5,7 +5,7 @@
 
 variables:
   InfraProvisioningResoureGroupName: $(environment)-provisioning-rg
-  tfBackendStorageAccountName: $(environment)terraformbackendsa
+  tfBackendStorageAccountName: $(environment)terraformbackendsa786
   tfBackendStorageContainerName: terraform-backend-files
   tfBackendFileName: $(environment)-tf-state-file
   tfvarsFile: $(environment).tfvars
@@ -32,7 +32,7 @@ steps:
 - task: AzureKeyVault@1
   inputs:
     azureSubscription: '$(environment)-sp'
-    KeyVaultName: '$(environment)-pipeline-secrets-kv'
+    KeyVaultName: '$(environment)-kv-786'
     SecretsFilter: 'tf-sp-id,tf-sp-secret,tf-tenant-id,tf-subscription-id,tf-backend-sa-access-key,aks-sp-id,aks-sp-secret'
   displayName: 'Get key vault secrets as pipeline variables'
 
